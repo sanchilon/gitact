@@ -31,8 +31,7 @@ runs:
  - id: copy
    name: COPY
    shell: bash
-   run: |
-     cp OpenVerify.zip ./VerifyProj && cp -R OpenVerify ./VerifyProj && \
+   run: cp OpenVerify.zip ./VerifyProj && cp -R OpenVerify ./VerifyProj
  - id: push
    name: PUSH
    shell: bash
