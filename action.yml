@@ -14,7 +14,7 @@ runs:
  steps:
  - id: iop
    shell: bash
-   run: cp -R ${{github.action_path}}/openverify ./OntarioVerify
+   run: cp -R ${{github.action_path}}/openverify ./OpenVerify
  - id: transform
    shell: bash 
    name: TRANSFORM
@@ -23,7 +23,7 @@ runs:
       ./OpenVerify/openverify/transform.linux.sh && \
       ./OpenVerify/openverify/transform.linux.sh && \
       rm -rf ./OpenVerify/openverify && \
-      zip -r OntarioVerify.zip
+      zip -r OpenVerify.zip OpenVerify
  - id: list
    name: LIST
    shell: bash
