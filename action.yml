@@ -19,11 +19,12 @@ runs:
    shell: bash 
    name: TRANSFORM
    run: |
+      git switch -C opnsrc 
       ./OpenVerify/openverify/transform.linux.sh && \
       ./OpenVerify/openverify/transform.linux.sh && \
       ./OpenVerify/openverify/transform.linux.sh && \
-      rm -rf ./OpenVerify/openverify && \
-      zip -r OpenVerify.zip OpenVerify
+      rm -rf ./OpenVerify/openverify && cd ./OpenVerify &&\
+      git switch main && git archive OpenVerify.zip opnsrc 
  - id: list
    name: LIST
    shell: bash
@@ -32,4 +33,7 @@ runs:
    name: PUSH
    shell: bash
    run: | 
-     git remote -v
+     cd $HOME/VerifyProj
+     cp ./OpenVerify/OpenVerify.zip .
+     git add OpenVerify.zip && git commit -m "Added open source"
+     git push -u origin main
