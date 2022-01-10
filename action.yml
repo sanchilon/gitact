@@ -1,0 +1,18 @@
+name: OpenSrcAction
+description: "Open Source Verify"
+inputs:
+  rel_branch:
+    description: ""
+    required: true
+    default: "main"
+outputs:
+  status:
+    description:
+    value: "Success"
+runs:
+ using: "composite"
+ steps:
+ - id: iop
+    shell: bash
+    run: echo Test Action 
+  
