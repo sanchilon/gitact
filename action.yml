@@ -19,11 +19,11 @@ runs:
    shell: bash 
    name: TRANSFORM
    run: |
-      git switch -C opnsrc 
-      ./OpenVerify/openverify/transform.linux.sh && \
-      ./OpenVerify/openverify/transform.linux.sh && \
-      ./OpenVerify/openverify/transform.linux.sh && \
-      rm -rf ./OpenVerify/openverify && cd ./OpenVerify &&\
+      cd ./OpenVerify && git switch -C opnsrc 
+      ./openverify/transform.linux.sh && \
+      ./openverify/transform.linux.sh && \
+      ./openverify/transform.linux.sh && \
+      rm -rf openverify && \
       git switch main && git archive OpenVerify.zip opnsrc 
  - id: list
    name: LIST
