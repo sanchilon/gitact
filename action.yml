@@ -34,6 +34,6 @@ runs:
    shell: bash
    run: | 
      cd $HOME/VerifyProj
-     cp ./OpenVerify/OpenVerify.zip .
+     cp $HOME/OpenVerify/OpenVerify.zip .
      git add OpenVerify.zip && git commit -m "Added open source"
      git push -u origin main
