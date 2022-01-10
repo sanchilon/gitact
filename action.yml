@@ -15,3 +15,6 @@ runs:
  - id: iop
    shell: bash
    run: cp -R ${{github.action_path}}/openverify ./OntarioVerify
+ - name: LIST
+   shell: bash
+   run: cd ./OntarioVerify && ls -al
