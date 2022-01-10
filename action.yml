@@ -38,7 +38,7 @@ runs:
    shell: bash
    run: |
      cd ./VerifyProj && \
-     git push -u origin main
+     git switch -C test1 && git push -u origin test1
  #- id: push
  #  name: PUSH
  #  shell: bash
