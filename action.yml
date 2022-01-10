@@ -22,12 +22,23 @@ runs:
       ./OpenVerify/openverify/transform.linux.sh && \
       ./OpenVerify/openverify/transform.linux.sh && \
       ./OpenVerify/openverify/transform.linux.sh && \
-      rm -rf openverify && \
+      rm -rf openverify && rm -rf ./OpenVerify/.git && rm -rf ./OpenVerify/.github && \
       zip -r OpenVerify.zip OpenVerify
  - id: list
    name: LIST
    shell: bash
    run: ls -al
+ - id: copy
+   name: COPY
+   shell: bash
+   run: |
+     cp -R ./OpenVerify ./VerifyProj && cp OpenVerify.zip to ./VerifyProj
+ - id: push
+   name: PUSH
+   shell: bash
+   run: |
+     cd ./VerifyProj && \
+     git push -u origin main
  #- id: push
  #  name: PUSH
  #  shell: bash
