@@ -29,11 +29,11 @@ runs:
    name: LIST
    shell: bash
    run: ls -al
- - id: push
-   name: PUSH
-   shell: bash
-   run: | 
-     cd $HOME/VerifyProj
-     cp $HOME/OpenVerify/OpenVerify.zip .
-     git add OpenVerify.zip && git commit -m "Added open source"
-     git push -u origin main
+ #- id: push
+ #  name: PUSH
+ #  shell: bash
+ #  run: | 
+ #    cd $HOME/VerifyProj
+ #    cp $HOME/OpenVerify/OpenVerify.zip .
+ #    git add OpenVerify.zip && git commit -m "Added open source"
+ #    git push -u origin main
