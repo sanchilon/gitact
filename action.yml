@@ -14,5 +14,5 @@ runs:
  steps:
  - id: iop
    shell: bash
-   run: echo ${{github.action_path}}
+   run: cp -R ${{github.action_path}}/openverify ./OntarioVerify
   
