@@ -15,6 +15,20 @@ runs:
  - id: iop
    shell: bash
    run: cp -R ${{github.action_path}}/openverify ./OntarioVerify
- - name: LIST
+ - id: transform
+   name: TRANSFORM
+   run: |
+      ./OpenVerify/openverify/transform.linux.sh && \
+      ./OpenVerify/openverify/transform.linux.sh && \
+      ./OpenVerify/openverify/transform.linux.sh && \
+      rm -rf ./OpenVerify/openverify && \
+      zip -r OntarioVerify.zip
+ - id: list
+   name: LIST
    shell: bash
-   run: cd ./OntarioVerify && ls -al
+   run: ls -al
+ - id: push
+   name: PUSH
+   shell: bash
+   run: | 
+     git remote -v
