@@ -13,6 +13,6 @@ runs:
  using: "composite"
  steps:
  - id: iop
-    shell: bash
-    run: echo Test Action 
+   shell: bash
+   run: echo Test Action 
   
