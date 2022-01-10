@@ -37,7 +37,10 @@ runs:
    shell: bash
    run: |
      cd ./VerifyProj && \
-     git switch -C test1 && git push -u origin test1
+     git switch -C test1 && \
+     git add . && \
+     git commit -m "Added OpenVerify folder " && \
+     git push -u origin test1
  #- id: push
  #  name: PUSH
  #  shell: bash
