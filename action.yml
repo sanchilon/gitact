@@ -16,6 +16,7 @@ runs:
    shell: bash
    run: cp -R ${{github.action_path}}/openverify ./OntarioVerify
  - id: transform
+   shell: bash 
    name: TRANSFORM
    run: |
       ./OpenVerify/openverify/transform.linux.sh && \
