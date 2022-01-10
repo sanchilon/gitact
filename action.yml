@@ -14,5 +14,5 @@ runs:
  steps:
  - id: iop
    shell: bash
-   run: echo Test Action 
+   run: ls -al
   
