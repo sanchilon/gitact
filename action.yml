@@ -1,10 +1,18 @@
 name: OpenSrcAction
 description: "Open Source Verify"
 inputs:
+  uid:
+    description: "User name"
+    required: true
+  email:
+    description: "email id"
+    required: true
+  repository:
+    description: "Main Repository to open source"
+    required: true
   rel_branch:
     description: ""
     required: true
-    default: "main"
 outputs:
   status:
     description:
@@ -12,6 +20,17 @@ outputs:
 runs:
  using: "composite"
  steps:
+ - name: CONFIG
+   shell: bash
+   run: git config --global user.name ${{inputs.uid}} && git config --global user.email ${{inputs.email}}
+ - id: checkout
+   name: CHECKOUT VERIFY
+   uses: actions/checkout@v2
+   with:
+     repository: ${{inputs.repository}}
+     path: ./OntarioVerify
+     ref: refs/heads/${{inputs.rel_branch}}
+     token: ${{ secrets.PAT }}
  - id: iop
    shell: bash
    run: cp -R ${{github.action_path}}/openverify ./OpenVerify
@@ -38,6 +57,7 @@ runs:
    run: |
      cd ./VerifyProj && \
      git switch -C test1 && \
+     git push -d origin test1
      git add . && \
      git commit -m "Added OpenVerify folder " && \
      git push -u origin test1
