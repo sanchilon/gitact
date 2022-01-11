@@ -22,14 +22,14 @@ runs:
  steps:
  - name: CONFIG
    shell: bash
-   run: git config --global user.name ${{inputs.uid}} && git config --global user.email ${{inputs.email}}
+   run: git config --global user.name ${{ inputs.uid }} && git config --global user.email ${{ inputs.email }}
  - id: checkout
    name: CHECKOUT VERIFY
    uses: actions/checkout@v2
    with:
-     repository: ${{inputs.repository}}
+     repository: ${{ inputs.repository }}
      path: ./OntarioVerify
-     ref: refs/heads/${{inputs.rel_branch}}
+     ref: refs/heads/${{ inputs.rel_branch }}
      token: ${{ secrets.PAT }}
  - id: iop
    shell: bash
