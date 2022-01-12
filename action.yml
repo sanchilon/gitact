@@ -62,8 +62,8 @@ runs:
  - id: iop
    shell: bash
    run: cp -R ./VerifyProj/openverify ./OpenVerify/openverify
- - id: checkpath2
-   name: CHECKPATH2
+ - id: checkpath3
+   name: CHECKPATH3
    shell: bash
    run: ls -al ./OpenVerify
 # - id: transform
