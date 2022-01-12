@@ -1,6 +1,8 @@
 name: OpenSrcAction
 description: "Open Source Verify"
+
 #####################################################################
+
 inputs:
   uid:
     description: "User name"
@@ -27,6 +29,8 @@ outputs:
   status:
     description:
     value: "Success"
+    
+#####################################################################
 runs:
  using: "composite"
  steps:
