@@ -49,9 +49,13 @@ runs:
    uses: actions/checkout@v2
    with:
      repository: ${{ inputs.prod_repository }}
-     path: ./OntarioVerify
+     path: ./OpenVerify
      ref: refs/heads/${{ inputs.prod_branch }}
      token: ${{inputs.token}}
+ - id: checkpath2
+   name: CHECKPATH2
+   shell: bash
+   run: ls -al ./OpenVerify
  - name: ECHOPATH
    shell: bash
    run: echo ${{github.action_path}}
