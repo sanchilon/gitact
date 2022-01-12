@@ -40,6 +40,10 @@ runs:
      path: ./VerifyProj
      ref: refs/heads/${{inputs.opnsrc_branch}}
      token: ${{ inputs.token }}
+ - id: checkpath1
+   name: CHECKPATH1
+   shell: bash
+   run: ls -al
  - id: checkout2
    name: CHECKOUT VERIFY
    uses: actions/checkout@v2
@@ -48,16 +52,17 @@ runs:
      path: ./OntarioVerify
      ref: refs/heads/${{ inputs.prod_branch }}
      token: ${{inputs.token}}
+ - id: checkpath2
+   name: CHECKPATH2
+   shell: bash
+   run: ls -al
  - name: ECHOPATH
    shell: bash
    run: echo ${{github.action_path}}
 # - id: iop
 #   shell: bash
 #   run: cp -R ${{github.action_path}}/VerifyProj/openverify ${{github.action_path}}/OpenVerify
- - id: checkpath
-   name: CHECKPATH
-   shell: bash
-   run: ls -al ${{github.action_path}}
+
 # - id: transform
 #   shell: bash 
 #   name: TRANSFORM
