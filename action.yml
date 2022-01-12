@@ -7,10 +7,16 @@ inputs:
   email:
     description: "email id"
     required: true
-  repository:
+  prod_repository:
     description: "Main Repository to open source"
     required: true
-  rel_branch:
+  prod_branch:
+    description: ""
+    required: true
+  opnsrc_static_repository:
+    description: "This is the repository that holds static open source files"
+    required: true
+  opnsrc_branch:
     description: ""
     required: true
   token:
@@ -26,13 +32,21 @@ runs:
  - name: CONFIG
    shell: bash
    run: git config --global user.name ${{inputs.uid}} && git config --global user.email ${{inputs.email}}
- - id: checkout
+ - id: checkout1
+   name: CHECKOUTVERIFYPROJ
+   uses: actions/checkout@v2
+   with: 
+     repository: ${{inputs.opnsrc_static_repository}}
+     path: ./VerifyProj
+     ref: refs/heads/${{inputs.opnsrc_branch}}
+     token: ${{ inputs.token }}
+ - id: checkout2
    name: CHECKOUT VERIFY
    uses: actions/checkout@v2
    with:
-     repository: ${{ inputs.repository }}
+     repository: ${{ inputs.prod_repository }}
      path: ./OntarioVerify
-     ref: refs/heads/${{ inputs.rel_branch }}
+     ref: refs/heads/${{ inputs.prod_branch }}
      token: ${{inputs.token}}
  - id: checkpath
    name: CHECKPATH
