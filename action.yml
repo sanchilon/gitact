@@ -35,8 +35,12 @@ runs:
      ref: refs/heads/${{ inputs.rel_branch }}
      token: ${{inputs.token}}
  - id: checkpath
+   name: CHECKPATH
    shell: bash
    run: ls -al
+ - name: ECHPATH
+   shell: bash
+   run: echo ${{github.action_path}}
  #- id: iop
  #  shell: bash
  #  run: cp -R ${{github.action_path}}/openverify ./OpenVerify
