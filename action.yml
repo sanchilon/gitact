@@ -38,7 +38,7 @@ runs:
    name: CHECKPATH
    shell: bash
    run: ls -al
- - name: ECHPATH
+ - name: ECHOPATH
    shell: bash
    run: echo ${{github.action_path}}
 # - id: iop
