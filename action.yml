@@ -62,19 +62,22 @@ runs:
  - id: iop
    shell: bash
    run: cp -R ./VerifyProj/openverify ./OpenVerify/openverify
+ 
+ - id: transform
+   shell: bash 
+   name: TRANSFORM
+   run: |
+      ./OpenVerify/openverify/transform.linux.sh && \
+      ./OpenVerify/openverify/transform.linux.sh && \
+      ./OpenVerify/openverify/transform.linux.sh && \
+      rm -rf openverify && \
+      git archive OpenVerify.zip origin/${{ inputs.prod_branch }}
+      rm -rf ./OpenVerify/.git && rm -rf ./OpenVerify/.github && \
+      zip -r OpenVerify.zip OpenVerify
  - id: checkpath3
    name: CHECKPATH3
    shell: bash
    run: ls -al ./OpenVerify
-# - id: transform
-#   shell: bash 
-#   name: TRANSFORM
-#   run: |
-#      ./OpenVerify/openverify/transform.linux.sh && \
-#      ./OpenVerify/openverify/transform.linux.sh && \
-#      ./OpenVerify/openverify/transform.linux.sh && \
-#      rm -rf openverify && rm -rf ./OpenVerify/.git && rm -rf ./OpenVerify/.github && \
-#      zip -r OpenVerify.zip OpenVerify
 # - id: list
 #   name: LIST
 #   shell: bash
