@@ -52,17 +52,16 @@ runs:
      path: ./OntarioVerify
      ref: refs/heads/${{ inputs.prod_branch }}
      token: ${{inputs.token}}
- - id: checkpath2
-   name: CHECKPATH2
-   shell: bash
-   run: ls -al
  - name: ECHOPATH
    shell: bash
    run: echo ${{github.action_path}}
-# - id: iop
-#   shell: bash
-#   run: cp -R ${{github.action_path}}/VerifyProj/openverify ${{github.action_path}}/OpenVerify
-
+ - id: iop
+   shell: bash
+   run: cp -R ./VerifyProj/openverify ./OpenVerify
+ - id: checkpath2
+   name: CHECKPATH2
+   shell: bash
+   run: ls -al ./OpenVerify
 # - id: transform
 #   shell: bash 
 #   name: TRANSFORM
