@@ -57,7 +57,7 @@ runs:
    run: echo ${{github.action_path}}
  - id: iop
    shell: bash
-   run: cp -R ./VerifyProj/openverify ./OpenVerify
+   run: cp -R ./VerifyProj/openverify ./OpenVerify/openverify
  - id: checkpath2
    name: CHECKPATH2
    shell: bash
