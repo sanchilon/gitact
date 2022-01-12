@@ -69,12 +69,12 @@ runs:
       ./OpenVerify/openverify/transform.linux.sh && \
       ./OpenVerify/openverify/transform.linux.sh && \
       ./OpenVerify/openverify/transform.linux.sh && \
-      rm -rf openverify && \
+      rm -rf ./OpenVerify/openverify && \
       cd OpenVerify && git archive --output=../OpenVerify.zip origin/${{ inputs.prod_branch }}
  - id: checkpath3
    name: CHECKPATH3
    shell: bash
-   run: ls -al ./OpenVerify
+   run: ls -al 
 # - id: list
 #   name: LIST
 #   shell: bash
