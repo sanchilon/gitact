@@ -76,6 +76,17 @@ runs:
    name: CHECKPATH3
    shell: bash
    run: ls -al 
+ - id: outputzip
+   name: OUTPUTZIP
+   shell: bash
+   run: echo ""
+ - id: upload
+   name: UPLOAD
+   uses: actions/upload-artifact@v2
+   with:
+    name: OpenSourceArchive
+    path: ./OpenVerify.zip
+    if-no-files-found: warn
 # - id: list
 #   name: LIST
 #   shell: bash
