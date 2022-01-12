@@ -72,8 +72,6 @@ runs:
       ./OpenVerify/openverify/transform.linux.sh && \
       rm -rf openverify && \
       git archive OpenVerify.zip origin/${{ inputs.prod_branch }}
-      rm -rf ./OpenVerify/.git && rm -rf ./OpenVerify/.github && \
-      zip -r OpenVerify.zip OpenVerify
  - id: checkpath3
    name: CHECKPATH3
    shell: bash
