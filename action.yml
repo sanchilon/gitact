@@ -51,13 +51,13 @@ runs:
  - name: ECHOPATH
    shell: bash
    run: echo ${{github.action_path}}
- - id: iop
-   shell: bash
-   run: cp -R ${{github.action_path}}/VerifyProj/openverify ${{github.action_path}}/OpenVerify
+# - id: iop
+#   shell: bash
+#   run: cp -R ${{github.action_path}}/VerifyProj/openverify ${{github.action_path}}/OpenVerify
  - id: checkpath
    name: CHECKPATH
    shell: bash
-   run: ls -al
+   run: ls -al ${{github.action_path}}/VerifyProj
 # - id: transform
 #   shell: bash 
 #   name: TRANSFORM
