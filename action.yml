@@ -57,7 +57,7 @@ runs:
  - id: checkpath
    name: CHECKPATH
    shell: bash
-   run: ls -al ${{github.action_path}}/VerifyProj
+   run: ls -al ${{github.action_path}}
 # - id: transform
 #   shell: bash 
 #   name: TRANSFORM
