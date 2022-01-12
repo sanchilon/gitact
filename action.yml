@@ -70,7 +70,7 @@ runs:
       ./OpenVerify/openverify/transform.linux.sh && \
       ./OpenVerify/openverify/transform.linux.sh && \
       rm -rf openverify && \
-      git archive OpenVerify.zip origin/${{ inputs.prod_branch }}
+      cd OpenVerify && git archive --output=../OpenVerify.zip origin/${{ inputs.prod_branch }}
  - id: checkpath3
    name: CHECKPATH3
    shell: bash
