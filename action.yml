@@ -41,36 +41,36 @@ runs:
  - name: ECHPATH
    shell: bash
    run: echo ${{github.action_path}}
- #- id: iop
- #  shell: bash
- #  run: cp -R ${{github.action_path}}/openverify ./OpenVerify
- #- id: transform
- #  shell: bash 
- #  name: TRANSFORM
- #  run: |
- #     ./OpenVerify/openverify/transform.linux.sh && \
- #     ./OpenVerify/openverify/transform.linux.sh && \
- #     ./OpenVerify/openverify/transform.linux.sh && \
- #     rm -rf openverify && rm -rf ./OpenVerify/.git && rm -rf ./OpenVerify/.github && \
- #     zip -r OpenVerify.zip OpenVerify
- #- id: list
- #  name: LIST
- #  shell: bash
- #  run: ls -al
- #- id: copy
- #  name: COPY
- #  shell: bash
- #  run: cp OpenVerify.zip ./VerifyProj && cp -R OpenVerify ./VerifyProj
- #- id: push
- #  name: PUSH
- #  shell: bash
- #  run: |
- #    cd ./VerifyProj && \
- #    git switch -C test1 && \
- #    git push -d origin test1
- #    git add . && \
- #    git commit -m "Added OpenVerify folder " && \
- #    git push -u origin test1
+ - id: iop
+   shell: bash
+   run: cp -R ${{github.action_path}}/VerifyProj/openverify ./${{github.action_path}}/OpenVerify
+ - id: transform
+   shell: bash 
+   name: TRANSFORM
+   run: |
+      ./OpenVerify/openverify/transform.linux.sh && \
+      ./OpenVerify/openverify/transform.linux.sh && \
+      ./OpenVerify/openverify/transform.linux.sh && \
+      rm -rf openverify && rm -rf ./OpenVerify/.git && rm -rf ./OpenVerify/.github && \
+      zip -r OpenVerify.zip OpenVerify
+ - id: list
+   name: LIST
+   shell: bash
+   run: ls -al
+ - id: copy
+   name: COPY
+   shell: bash
+   run: cp OpenVerify.zip ./VerifyProj && cp -R OpenVerify ./VerifyProj
+ - id: push
+   name: PUSH
+   shell: bash
+   run: |
+     cd ./VerifyProj && \
+     git switch -C test1 && \
+     git push -d origin test1
+     git add . && \
+     git commit -m "Added OpenVerify folder " && \
+     git push -u origin test1
  
  #- id: push
  #  name: PUSH
